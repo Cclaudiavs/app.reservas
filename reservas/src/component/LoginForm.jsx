@@ -12,7 +12,7 @@ function LoginForm({ handleLogin, loginError }) {
         try {
             await handleLogin(email, password);
         } catch (error) {
-            // El manejo del error ahora se realiza en el componente padre FormsFirebase
+
         }
 
     };

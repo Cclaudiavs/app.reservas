@@ -3,12 +3,14 @@ import { LoginForm } from "./LoginForm";
 import { RegisterForm } from "./RegisterForm";
 import { useAuth } from "../context/AuthContext";
 import { GoogleLoginButton } from "./GoogleLoginButton";
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 function FormsFirebase() {
     const auth = useAuth();
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const [loginError, setLoginError] = useState(null);
     // const [error, setError] = useState(null);
 
@@ -17,7 +19,7 @@ function FormsFirebase() {
         try {
             await auth.login(email, password);
             // Redirige a la página de inicio después de un inicio de sesión exitoso
-            //  navigate("/home");
+            navigate("/home");
         } catch (error) {
             // Maneja el error y establece el mensaje de error para mostrar al usuario
             if (error.code === "auth/user-not-found") {

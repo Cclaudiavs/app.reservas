@@ -14,7 +14,7 @@ function App() {
             <img
               src={logoIMG}
               alt="Descripción de la imagen"
-              style={{ maxWidth: "300px" }} // Opcional: aplica estilos a la imagen
+              style={{ maxWidth: "300px" }}
             />
           </h1>
         </div>

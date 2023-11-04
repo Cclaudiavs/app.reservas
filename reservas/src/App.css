@@ -7,7 +7,7 @@
 
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #060606;
+  background-color: #070000;
 
 }
 
@@ -24,11 +24,15 @@ h1 {
 }
 
 .form {
-  color: #f9f9f9;
+  color: #f4f0f0;
+  font-family: Arial, Helvetica, sans-serif;
+
+
 }
 
 .titulo {
   color: black;
+  margin-bottom: 16px;
 }
 
 .app {
@@ -36,6 +40,7 @@ h1 {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+
 }
 
 .form-container {
@@ -49,13 +54,9 @@ h1 {
   background-color: #C5ACAC;
   max-width: 300px;
   margin: 10px auto;
-  margin-top: -35px;
-}
-
-.titulo {
-  margin-bottom: 16px;
 
 }
+
 
 .input-group {
   display: flex;
@@ -72,15 +73,13 @@ h1 {
   font-size: 14px;
 }
 
-button {
-  margin-top: 16px;
-  margin-bottom: 8px;
-}
+
 
 p {
   text-align: center;
-  padding: 20px;
-  margin-top: -10px;
+  margin-top: 20px;
+
+
 }
 
 .logo {
@@ -91,6 +90,7 @@ p {
   display: flex;
   margin-top: 10px;
   justify-content: center;
+
 }
 
 
