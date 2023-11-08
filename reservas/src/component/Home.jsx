@@ -10,6 +10,7 @@ import { db } from "../firebase/firebase.config";
 
 
 
+
 function Home() {
     const [filtro, setFiltro] = useState("nombre");
     const [showSearchFilter, setShowSearchFilter] = useState(false);
@@ -137,6 +138,9 @@ function Home() {
                     selectReserva={(reserva) => setSelectedReserva(reserva)}
                 />
             )}
+            <Link to="/reservas-del-dia">
+                <Button variant="contained">Reservas del Día</Button>
+            </Link>
 
             <EditReservaModal
                 isOpen={isModalOpen}

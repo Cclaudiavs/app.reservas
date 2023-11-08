@@ -7,6 +7,7 @@ import { AgregarReserva } from "./component/AgregarReserva";
 import { BuscarReserva } from "./component/BuscarReserva";
 import App from './App';
 import './index.css';
+import { ReservasDelDia } from "./component/ReservasDelDia";
 
 createRoot(document.getElementById('root')).render(
   <Router>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/home" element={<Home />} />
         <Route path="/agregar-reserva" element={<AgregarReserva />} />
         <Route path="/buscar-reserva" element={<BuscarReserva />} />
+        <Route path="/reservas-del-dia" element={<ReservasDelDia />} />
       </Routes>
     </AuthProvider>
   </Router>
