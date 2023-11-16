@@ -7,8 +7,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from 'react-router-dom';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase.config";
-
-
+import logoIMG from '../img/nonita.png';
 
 
 function Home() {
@@ -120,37 +119,55 @@ function Home() {
     };
 
     return (
-        <div>
-            <h1>Título</h1>
-            <div className="logout-button">
-                <button onClick={handleLogout}>Cerrar sesión</button>
-            </div>
-            <Button variant="contained" onClick={handleAgregarReserva} component={Link} to="/agregar-reserva">
-                Añadir Reserva
-            </Button>
-            <Button variant="contained" onClick={handleBuscarReserva}>
-                Buscar Reserva
-            </Button>
 
-            {showSearchFilter && (
-                <BuscarReserva
-                    openModal={setIsModalOpen}
-                    selectReserva={(reserva) => setSelectedReserva(reserva)}
+        <div className="contenedorHome">
+            <div className="logoNonita">
+                <div className="logo">
+                    <h1>
+                        <img
+                            src={logoIMG}
+                            alt="nonita"
+                            style={{ maxWidth: "300px" }}
+                        />
+                    </h1>
+                </div>
+
+
+                <div className="buttonCerrar">
+                    <button onClick={handleLogout}>Cerrar sesión</button>
+                </div>
+                <div className="buttonContainer">
+                    <Button variant="contained" style={{ marginBottom: '20px' }} onClick={handleAgregarReserva} component={Link} to="/agregar-reserva">
+                        Añadir Reserva
+                    </Button>
+                    <div className="buscarReserva">
+                        <Button variant="contained" style={{ marginBottom: '20px' }} onClick={handleBuscarReserva}>
+                            Buscar Reserva
+                        </Button>
+                    </div>
+                    {showSearchFilter && (
+                        <BuscarReserva
+                            openModal={setIsModalOpen}
+                            selectReserva={(reserva) => setSelectedReserva(reserva)}
+                        />
+                    )}
+                    <Link to="/reservas-del-dia">
+                        <Button variant="contained" style={{ marginBottom: '20px' }}>Reservas del Día</Button>
+                    </Link>
+                </div>
+
+                <EditReservaModal
+                    isOpen={isModalOpen}
+                    onRequestClose={() => setIsModalOpen(false)}
+                    selectedReserva={selectedReserva}
+                    isEditing={!!reservaParaEditar}
+                    editedReserva={editedReserva}
+                    onEditarReserva={handleEditarReserva}
                 />
-            )}
-            <Link to="/reservas-del-dia">
-                <Button variant="contained">Reservas del Día</Button>
-            </Link>
-
-            <EditReservaModal
-                isOpen={isModalOpen}
-                onRequestClose={() => setIsModalOpen(false)}
-                selectedReserva={selectedReserva}
-                isEditing={!!reservaParaEditar}
-                editedReserva={editedReserva}
-                onEditarReserva={handleEditarReserva}
-            />
+            </div>
         </div>
+
+
     );
 }
 

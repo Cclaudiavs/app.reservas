@@ -25,7 +25,7 @@ const GoogleLoginButton = ({ onError }) => {
         <div className="button">
             {isAuthenticated ? (
                 <Link to={`/home`}>
-                    <Button variant="contained">Ir a Home</Button>
+                    <Button variant="contained">Ingresa</Button>
                 </Link>
             ) : (
                 <Button
@@ -37,7 +37,7 @@ const GoogleLoginButton = ({ onError }) => {
                         padding: "6px 16px",
                         display: "flex",
                     }}>
-                    {/* Utiliza el componente Typography para el texto */}
+
                     <Typography style={{
                         color: "black",
                         marginRight: "10px"
@@ -54,6 +54,7 @@ const GoogleLoginButton = ({ onError }) => {
 };
 
 export { GoogleLoginButton };
+
 
 
 
