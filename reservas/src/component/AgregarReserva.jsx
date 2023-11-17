@@ -54,6 +54,7 @@ function AgregarReserva({ isEditing, reservaParaEditar, onAgregarReserva, onEdit
         }
     };
 
+
     useEffect(() => {
         if (isEditing && reservaParaEditar) {
             setReserva(reservaParaEditar); // Cargar los datos de la reserva para editar
@@ -86,67 +87,67 @@ function AgregarReserva({ isEditing, reservaParaEditar, onAgregarReserva, onEdit
         });
     };
     return (
-        <div className="contenedorTotal">
+        <div className="home">
+            <div className="logoNonita">
+                <div className="logo">
+                    <h1>
+                        <img
+                            src={logoIMG}
+                            alt="nonita"
+                            style={{ maxWidth: "300px" }}
+                        />
+                    </h1>
+                </div>
+            </div>
             <div className="form">
                 <div className="buttonCerrar">
                     <Button variant="contained" component={Link} to="/home">
                         Volver
                     </Button>
                 </div>
-                <div className="logoNonita">
-                    <div className="logo">
-                        <h1>
-                            <img
-                                src={logoIMG}
-                                alt="nonita"
-                                style={{ maxWidth: "300px" }}
-                            />
-                        </h1>
-                    </div>
-                    <h2>Registro de Reserva</h2>
+
+                <h2>Registro de Reserva</h2>
+
+                <div className="form-container">
+                    <input className="input"
+                        type="text"
+                        placeholder="Nombre del Cliente"
+                        value={reserva.nombre}
+                        onChange={(e) => setReserva({ ...reserva, nombre: e.target.value })}
+                    />
+
+                    <input className="input"
+                        type="date"
+                        placeholder="Fecha de Reserva"
+                        value={reserva.fecha}
+                        onChange={(e) => setReserva({ ...reserva, fecha: e.target.value })}
+                    />
+                    <input className="input"
+                        type="text"
+                        placeholder="Turno"
+                        value={reserva.turno}
+                        onChange={(e) => setReserva({ ...reserva, turno: e.target.value })}
+                    />
+
+                    <input className="input"
+                        type="number"
+                        placeholder="Cantidad de Personas"
+                        value={reserva.cantidad}
+                        onChange={(e) => setReserva({ ...reserva, cantidad: e.target.value })}
+                    />
+
+                    <Button variant="contained" onClick={handleAgregarReserva}>
+                        Guardar Reserva
+                    </Button>
+
+                    <Snackbar
+                        open={showSuccessMessage}
+                        autoHideDuration={6000}
+                        onClose={() => setShowSuccessMessage(false)}
+                        message="Reserva guardada exitosamente."
+                    />
                 </div>
             </div>
-            <div className="form-container">
-                <input className="input"
-                    type="text"
-                    placeholder="Nombre del Cliente"
-                    value={reserva.nombre}
-                    onChange={(e) => setReserva({ ...reserva, nombre: e.target.value })}
-                />
-                <input
-                    className="input"
-                    type="date"
-                    placeholder="Fecha de Reserva"
-                    value={reserva.fecha}
-                    onChange={(e) => setReserva({ ...reserva, fecha: e.target.value })}
-                />
-                <input
-                    className="input"
-                    type="text"
-                    placeholder="Turno"
-                    value={reserva.turno}
-                    onChange={(e) => setReserva({ ...reserva, turno: e.target.value })}
-                />
-
-                <input
-                    className="input"
-                    type="number"
-                    placeholder="Cantidad de Personas"
-                    value={reserva.cantidad}
-                    onChange={(e) => setReserva({ ...reserva, cantidad: e.target.value })}
-                />
-                <Button variant="contained" onClick={handleAgregarReserva}>
-                    Guardar Reserva
-                </Button>
-
-                <Snackbar
-                    open={showSuccessMessage}
-                    autoHideDuration={6000}
-                    onClose={() => setShowSuccessMessage(false)}
-                    message="Reserva guardada exitosamente."
-                />
-            </div>
-
         </div>
     );
 }

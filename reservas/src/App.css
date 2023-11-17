@@ -20,7 +20,8 @@ h2 {
   color: #f4f0f0;
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 50px;
-
+  flex-direction: column;
+  margin-left: 10px;
 }
 
 h1 {
@@ -39,6 +40,8 @@ h1 {
 .form {
   color: #f4f0f0;
   font-family: Arial, Helvetica, sans-serif;
+  flex-direction: column;
+
 }
 
 .titulo {
@@ -107,10 +110,28 @@ p {
 
 }
 
+.buttonEs {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.edit {
+  flex-direction: column;
+  margin: 10px;
+  background-color: #C5ACAC;
+}
+
+.borrar {
+
+  margin: 10px;
+  background-color: #C5ACAC;
+}
 
 .logoNonita {
-  margin-right: 20px;
+  margin-right: 10px;
   margin-top: 50px;
+
 }
 
 .buttonCerrar {
@@ -138,10 +159,33 @@ p {
 
 .buttonContainer {
   margin-left: 63px;
-  gap: 80px;
+  flex-direction: column;
   width: 100%;
+
 }
 
+.confirmacion {
+
+  flex-direction: column;
+  font-size: 16px;
+  border: 2px solid #a70808;
+  /* Color y grosor del borde */
+  padding: 10px;
+  /* Espaciado interno */
+  margin-top: 20px;
+  /* Espaciado externo superior */
+}
+
+
+.parrafo {
+  color: #f4f0f0;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.mensaje {
+  color: #0a0a0a;
+}
 
 
 
@@ -208,7 +252,8 @@ p {
 /* Estilo para dispositivos de tamaño mediano (por ejemplo, tablets) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .buttonContainer {
-    gap: 10px;
+    flex-direction: column;
+    display: flex;
     /* Ajusta el espacio entre los botones para dispositivos medianos */
   }
 }

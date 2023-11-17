@@ -104,22 +104,23 @@ function BuscarReserva({ openModal, selectReserva, history }) {
 
     return (
         <div>
-            <input
+            <input className="input"
                 type="text"
                 placeholder="Buscar..."
                 value={busqueda}
                 onChange={(e) => setBusqueda(e.target.value)}
             />
 
-            <div>
+            <div className="form">
                 {resultados.map((reserva) => (
                     <div key={reserva.id}>
                         <p>Nombre: {reserva.nombre}</p>
                         <p>Turno: {reserva.turno}</p>
                         <p>Fecha: {reserva.fecha}</p>
-                        <button onClick={() => openEditModal(reserva)}>Editar</button>
-
-                        <button onClick={() => handleDeleteReserva(reserva)}>Borrar</button>
+                        <div className="buttonEs">
+                            <button className="edit" onClick={() => openEditModal(reserva)}>Editar</button>
+                            <button className="borrar" onClick={() => handleDeleteReserva(reserva)}>Borrar</button>
+                        </div>
                     </div>
                 ))}
                 <EditReservaModal

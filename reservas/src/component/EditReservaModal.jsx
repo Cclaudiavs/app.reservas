@@ -155,15 +155,18 @@ function EditReservaModal({ isOpen, onRequestClose, selectedReserva }) {
     };
 
     return (
+
         <Modal
+
             isOpen={isOpen}
             onRequestClose={onRequestClose}
             contentLabel="Editar Reserva"
         >
-            <div>
-                <h2>Editar Reserva</h2>
+            <div className="form-container">
+
+                <h3>Editar Reserva</h3>
                 <label>Nombre:</label>
-                <input
+                <input className="input"
                     type="text"
                     value={editedReserva.nombre}
                     onChange={(e) =>
@@ -171,7 +174,7 @@ function EditReservaModal({ isOpen, onRequestClose, selectedReserva }) {
                     }
                 />
                 <label>Fecha:</label>
-                <input
+                <input className="input"
                     type="date"
                     value={editedReserva.fecha}
                     onChange={(e) =>
@@ -179,23 +182,16 @@ function EditReservaModal({ isOpen, onRequestClose, selectedReserva }) {
                     }
                 />
                 <label>Turno:</label>
-                <input
+                <input className="input"
                     type="text"
                     value={editedReserva.turno}
                     onChange={(e) =>
                         setEditedReserva({ ...editedReserva, turno: e.target.value })
                     }
-                />
-                <label>Mesa:</label>
-                <input
-                    type="text"
-                    value={editedReserva.mesa}
-                    onChange={(e) =>
-                        setEditedReserva({ ...editedReserva, mesa: e.target.value })
-                    }
+
                 />
                 <label>Cantidad de Personas:</label>
-                <input
+                <input className="input"
                     type="number"
                     value={editedReserva.cantidad}
                     onChange={(e) =>
@@ -205,10 +201,10 @@ function EditReservaModal({ isOpen, onRequestClose, selectedReserva }) {
                         })
                     }
                 />
-                <button onClick={handleSave}>Guardar</button>
-                <button onClick={onRequestClose}>Cerrar</button>
+                <button className="button" onClick={handleSave}>Guardar</button>
+                <button className="button" onClick={onRequestClose}>Cerrar</button>
             </div>
-        </Modal>
+        </Modal >
     );
 }
 

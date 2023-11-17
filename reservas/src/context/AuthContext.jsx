@@ -22,6 +22,8 @@ export const useAuth = () => {
 
 export function AuthProvider({ children }) {
     const [user, setUser] = useState("")
+    const [registrationSuccess, setRegistrationSuccess] = useState(false);
+
     useEffect(() => {
         const subscribe = onAuthStateChanged(auth, (currentUser) => {
             if (!currentUser) {
@@ -33,11 +35,19 @@ export function AuthProvider({ children }) {
         })
         return () => subscribe()
     }, [])
-
     const register = async (email, password) => {
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+            setRegistrationSuccess(true);
+        } catch (error) {
+            console.error("Error al registrar el usuario:", error.message);
+            setRegistrationSuccess(false);
+        }
+    };
+    /*const register = async (email, password) => {
         const response = await createUserWithEmailAndPassword(auth, email, password);
         console.log(response)
-    }
+    }*/
     const login = async (email, password) => {
         const response = await signInWithEmailAndPassword(auth, email, password);
         console.log(response)
@@ -57,6 +67,7 @@ export function AuthProvider({ children }) {
 
     return <authContext.Provider value={{
         register,
+        registrationSuccess,
         login,
         loginWithGoogle,
         logout,
