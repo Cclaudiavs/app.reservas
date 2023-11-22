@@ -121,8 +121,8 @@ function Home() {
     return (
 
 
+        <div className="form">
 
-        <div className="contenedorHome">
 
             <div className="logoNonita">
                 <div className="logo">
@@ -134,32 +134,34 @@ function Home() {
                         />
                     </h1>
                 </div>
-                <div className="form">
-                    <div className="buttonCerrar">
-                        <Button variant="contained" onClick={handleLogout}>
-                            SALIR
-                        </Button>
-                    </div>
 
-                    <div className="buttonContainer">
-                        <Button variant="contained" style={{ marginBottom: '20px' }} onClick={handleAgregarReserva} component={Link} to="/agregar-reserva">
-                            Añadir Reserva
+                <div className="buttonCerrar">
+                    <Button variant="contained" onClick={handleLogout}>
+                        SALIR
+                    </Button>
+                </div>
+
+                <div className="buttonContainer">
+                    <Button variant="contained" style={{ marginBottom: '20px' }} onClick={handleAgregarReserva} component={Link} to="/agregar-reserva">
+                        Añadir Reserva
+                    </Button>
+
+
+                    <div className="buscarReserva">
+                        <Button variant="contained" style={{ marginBottom: '20px' }} onClick={handleBuscarReserva}>
+                            Buscar Reserva
                         </Button>
-                        <Link to="/reservas-del-dia">
-                            <Button variant="contained" style={{ marginBottom: '20px' }}>Reservas del Día</Button>
-                        </Link>
-                        <div className="buscarReserva">
-                            <Button variant="contained" style={{ marginBottom: '20px' }} onClick={handleBuscarReserva}>
-                                Buscar Reserva
-                            </Button>
-                        </div>
-                        {showSearchFilter && (
-                            <BuscarReserva
-                                openModal={setIsModalOpen}
-                                selectReserva={(reserva) => setSelectedReserva(reserva)}
-                            />
-                        )}
                     </div>
+                    <Link to="/reservas-del-dia">
+                        <Button variant="contained" style={{ marginBottom: '20px' }}>Reservas del Día</Button>
+                    </Link>
+                    {showSearchFilter && (
+                        <BuscarReserva
+                            openModal={setIsModalOpen}
+                            selectReserva={(reserva) => setSelectedReserva(reserva)}
+                        />
+                    )}
+
                 </div>
             </div>
             <EditReservaModal
