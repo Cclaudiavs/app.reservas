@@ -4,7 +4,7 @@ import './App.css';
 import '@mui/material/styles';
 import FormsFirebase from './component/FormsFirebase';
 import logoIMG from '../src/img/nonita.png'
-import Home from './component/Home';
+
 
 function App() {
   return (
