@@ -1,5 +1,16 @@
 <!doctype html>
 <html lang="en">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('Service Worker registrado con éxito:', registration);
+      })
+      .catch((error) => {
+        console.error('Error al registrar el Service Worker:', error);
+      });
+  }
+</script>
 
 <head>
   <meta charset="UTF-8" />
@@ -7,8 +18,9 @@
   <link rel="manifest" href="/manifest.json" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Vite + React</title>
+  <title>Nonita</title>
 </head>
+
 
 <body>
   <div id="root"></div>
