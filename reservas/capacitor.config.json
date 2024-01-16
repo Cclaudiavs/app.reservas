@@ -1,0 +1,8 @@
+{
+  "appId": "com.nonita_reservas.app",
+  "appName": "Nonita Reservas",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
