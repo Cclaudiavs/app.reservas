@@ -13,3 +13,8 @@ Utilizamos css puro, se hizo responsive para cualquier tipo de dispositivo, util
 La app esta hecha para descargar en cualquier dispositivo movil Android 
 link de descarga :
 (https://1drv.ms/u/s!AtwCHuP-CjCunI8rbl5JeTutGQc7IA)
+
+ ##### Figma
+ Se realizo prototipo de del proyecto antes de comenzar, se implemento Figma para realizarlos, probar colores y direcciones de botones.
+ link figma:
+(https://www.figma.com/file/WYEqApVnYvt6awTryvWakj/Untitled?type=design&node-id=0%3A1&mode=design&t=HAKVDpsmGGa5eFe6-1)
